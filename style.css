@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 24px;
+    background:
+        radial-gradient(ellipse at 15% 10%, rgb(124 58 237 / 18%), transparent 38%),
+        radial-gradient(ellipse at 90% 90%, rgb(14 165 233 / 14%), transparent 36%),
+        #f4f6fb;
+    color: #172033;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.container {
+    width: min(100%, 460px);
+    padding: clamp(24px, 6vw, 38px);
+    border: 1px solid rgb(226 232 240 / 85%);
+    border-radius: 24px;
+    background: rgb(255 255 255 / 94%);
+    box-shadow: 0 24px 70px rgb(31 41 55 / 12%);
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #172033;
+    font-size: clamp(1.7rem, 6vw, 2rem);
+    font-weight: 750;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+}
+
+.amount p,
+.from p,
+.to p {
+    margin-bottom: 9px;
+    color: #667085;
+    font-size: 0.875rem;
+    font-weight: 650;
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+    font: inherit;
+}
+
+form input {
+    height: 56px;
+    padding: 0 16px;
+    border: 1px solid #dce2ec;
+    background: #fbfcfe;
+    color: #172033;
+    font-size: 1.05rem;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+form input:focus,
+.select-contianer:focus-within {
+    border-color: #7657e8;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgb(118 87 232 / 13%);
+    outline: none;
+}
+
+.dropdown {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 26px;
+}
+
+.from,
+.to {
+    min-width: 0;
+    flex: 1;
+}
+
+.select-contianer {
+    display: flex;
+    min-width: 0;
+    height: 52px;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    border: 1px solid #dce2ec;
+    border-radius: 12px;
+    background: #fbfcfe;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.dropdown img {
+    display: block;
+    width: 25px;
+    height: auto;
+    flex: 0 0 auto;
+    border-radius: 3px;
+}
+
+.select-contianer select {
+    min-width: 0;
+    height: 100%;
+    background: transparent;
+    color: #172033;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 650;
+}
+
+.dropdown i {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    place-items: center;
+    margin-bottom: 6px;
+    border-radius: 50%;
+    background: #f0edff;
+    color: #6941c6;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.dropdown i:hover {
+    transform: rotate(180deg);
+    background: #e5deff;
+}
+
+.dropdown i:focus-visible,
+form button:focus-visible {
+    outline: 3px solid rgb(118 87 232 / 35%);
+    outline-offset: 3px;
+}
+
+.msg {
+    margin: 25px 0 18px;
+    padding: 15px 16px;
+    border-radius: 12px;
+    background: #f5f3ff;
+    color: #49349b;
+    font-size: 0.95rem;
+    font-weight: 650;
+    line-height: 1.5;
+}
+
+form button {
+    min-height: 54px;
+    padding: 13px 18px;
+    background: #6941c6;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgb(105 65 198 / 22%);
+    transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+form button:hover {
+    transform: translateY(-1px);
+    background: #5835ad;
+    box-shadow: 0 11px 22px rgb(105 65 198 / 28%);
+}
+
+form button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 380px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        padding: 23px 18px;
+        border-radius: 20px;
+    }
+
+    .dropdown {
+        gap: 9px;
+    }
+
+    .select-contianer {
+        gap: 6px;
+        padding: 0 8px;
+    }
+
+    .dropdown i {
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+}
